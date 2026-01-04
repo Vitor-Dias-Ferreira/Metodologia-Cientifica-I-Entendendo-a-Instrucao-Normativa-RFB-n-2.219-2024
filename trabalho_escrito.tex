@@ -1,0 +1,233 @@
+\documentclass[12pt,a4paper]{article}
+
+% --- Idioma e codificação ---
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[brazil]{babel}
+
+% --- Layout ---
+\usepackage[a4paper,margin=2.5cm]{geometry}
+\usepackage{setspace}
+\onehalfspacing
+\usepackage{indentfirst}
+
+% --- Matemática e símbolos (opcional, mas útil) ---
+\usepackage{amsmath,amssymb}
+
+% --- Tabelas ---
+\usepackage{array}
+\usepackage{tabularx}
+
+% --- Links/URLs ---
+\usepackage[hidelinks]{hyperref}
+\usepackage{url}
+
+% --- Pequenos ajustes visuais ---
+\setlength{\parindent}{1.25cm}
+\setlength{\parskip}{0pt}
+
+\begin{document}
+
+% =======================
+% Capa
+% =======================
+\begin{titlepage}
+\centering
+
+{\large UNIVERSIDADE DE SÃO PAULO - USP\par}
+\vspace{0.2cm}
+{\large INSTITUTO DE CIÊNCIAS MATEMÁTICAS E DE COMPUTAÇÃO –\par}
+{\large ICMC\par}
+
+\vspace{0.8cm}
+{\normalsize Disciplina: SME0825 - Metodologia Científica I\par}
+
+\vfill
+{\LARGE \textbf{Entendendo a}\par}
+\vspace{0.2cm}
+{\LARGE \textbf{Instrução Normativa RFB nº}\par}
+\vspace{0.2cm}
+{\LARGE \textbf{2.219/2024}\par}
+\vfill
+
+{\normalsize
+Alexander Kahleul\\
+Fernando Ramos\\
+Gabriel Maia Gruppo\\
+Vitor Dias Ferreira\par}
+
+\vfill
+{\normalsize São Carlos - 2025\par}
+\end{titlepage}
+
+% =======================
+% Sumário
+% =======================
+\tableofcontents
+\newpage
+
+% A numeração do seu PDF parece começar aqui no "2".
+% Se quiser igual, descomente as 2 linhas abaixo:
+% \setcounter{page}{2}
+
+% =======================
+% Resumo
+% =======================
+\section*{Resumo}
+\addcontentsline{toc}{section}{Resumo}
+
+O presente trabalho analisa a trajetória da Instrução Normativa (IN) nº 2.219/2024 da Receita Federal do Brasil (RFB), desde sua concepção até sua revogação, e as consequentes implicações para o cenário de reporte fiscal no Brasil. Trata-se de um estudo de caso expositivo, fundamentado na análise de fontes primárias, como os textos das INs 2.219/2024 e 2.247/2025, e em fontes secundárias, como comunicados oficiais e reportagens da imprensa. A pesquisa demonstra que a IN 2.219/2024, que visava modernizar a e-Financeira ao incluir novos agentes como operadores de Pix e elevar os limites de reporte, foi alvo de uma campanha de desinformação que a rotulou inapropriadamente como um “imposto sobre o Pix”. Argumenta-se que a polêmica foi amplificada não apenas por atores políticos, mas também por uma interpretação superficial de dados estatísticos. Um exemplo notório foi a divulgação de uma queda recorde no uso do Pix que, embora factualmente correta em seu título, omitia o contexto de variação sazonal normal — informação que constava no corpo do texto e era confirmada pelo Banco Central — contribuindo para o clima de pânico. A resultante crise de percepção pública forçou o governo a revogar a norma, restaurando, por efeito de repristinação, o arcabouço regulatório anterior, mais antigo e com limites de reporte mais rigorosos. Conclui-se que o episódio transcende a esfera técnica, configurando-se como um estudo sobre a fragilidade da comunicação de políticas públicas complexas na era digital, onde a desinformação política é potencializada por um baixo letramento estatístico, gerando o risco de inibir futuras e necessárias modernizações na administração tributária.
+
+\textbf{Palavras-chave:} Instrução Normativa. e-Financeira. Desinformação. Política Fiscal. Pix.
+
+\newpage
+
+% =======================
+% 1 Introdução
+% =======================
+\section{Introdução}
+
+\subsection{O Banco Central e a Receita Federal}
+No contexto da administração pública brasileira, destacam-se duas instituições centrais na manutenção da ordem econômica e fiscal que fazem parte do Sistema Financeiro Nacional (SFN): o Banco Central do Brasil (BCB) e a Receita Federal do Brasil (RFB). O BCB, enquanto autoridade monetária, é responsável pela condução da política monetária, pelo controle da inflação, pela regulação do sistema financeiro e pela estabilidade da moeda nacional. O BCB atua como o “banco dos bancos”, pois as instituições financeiras mantêm contas junto a ele. Suas atribuições incluem a fiscalização das instituições financeiras, a autorização para seu funcionamento e a regulação de instrumentos como o sistema de compensação de cheques e o sistema de pagamentos instantâneos, o Pix. Já a RFB exerce papel essencial na arrecadação de tributos federais e na fiscalização do cumprimento das obrigações tributárias, sendo protagonista no combate à sonegação fiscal e no controle do comércio exterior.
+
+\subsection{A e-Financeira, o Pix e as fintechs}
+A atuação coordenada entre o BCB e a RFB é essencial para a preservação da estabilidade macroeconômica e para a efetividade da arrecadação estatal, possibilitando o financiamento de políticas públicas e o cumprimento das funções constitucionais do Estado. Essa interação é formalizada por meio de convênios que permitem o intercâmbio de informações. A RFB fornece ao BCB acesso a dados do Cadastro de Pessoas Físicas (CPF), enquanto o BCB provê informações do sistema financeiro. O principal veículo para essa troca de informações é a e-Financeira, uma obrigação acessória por meio da qual as instituições financeiras e de pagamento, reguladas e autorizadas a funcionar pelo BCB, devem prestar informações sobre as operações de seus clientes à RFB.
+
+Mais especificamente, a e-Financeira é um sistema pelo qual os bancos tradicionais, seguradoras e outras entidades financeiras já reportavam à Receita Federal os montantes globais movimentados mensalmente por seus clientes. O objetivo nunca foi fiscalizar cada transação individual, mas sim cruzar dados agregados para identificar grandes discrepâncias entre a movimentação financeira de um contribuinte e sua renda declarada, sendo uma ferramenta poderosa no combate à sonegação fiscal e à lavagem de dinheiro.
+
+Entre os principais instrumentos tecnológicos promovidos pelo Banco Central, destaca-se o Pix, sistema de pagamentos instantâneos implementado em 2020. O Pix revolucionou as transações financeiras no país ao permitir pagamentos e transferências em tempo real, todos os dias da semana, sem custos para pessoas físicas. Além disso, passou a desempenhar um papel estratégico na identificação de movimentações financeiras atípicas, por meio da obrigatoriedade de reporte à e-Financeira quando os valores transacionados ultrapassam certos limites. Tais práticas ampliam a capacidade do Estado de monitorar o sistema financeiro e identificar indícios de irregularidades, inclusive sonegação fiscal.
+
+Paralelamente, o cenário financeiro brasileiro passou por profundas transformações nos últimos anos, impulsionadas sobretudo pela emergência das fintechs — empresas do setor financeiro que se utilizam de tecnologia para otimizar serviços e reduzir custos operacionais. Embora nem toda fintech configure-se como um banco digital, muitas delas atuam sob regulamentações específicas, como as resoluções nº 4.656 e nº 4.657 do Conselho Monetário Nacional (CMN), que estabeleceram as bases legais para as fintechs de crédito. Esses marcos regulatórios refletem uma tendência à modernização do setor, com abertura à inovação e estímulo à concorrência, inclusive por meio da iniciativa do Open Finance, sistema que permite o compartilhamento estruturado e seguro de dados financeiros entre instituições autorizadas.
+
+\subsection{O problema emergente}
+A rápida expansão das fintechs e a consolidação do Pix como o principal meio de pagamento no país criaram um novo paradigma financeiro, caracterizado pela velocidade, descentralização e um volume massivo de transações financeiras digitais. Este cenário, contudo, expôs uma defasagem crítica na legislação de monitoramento fiscal. A e-Financeira, em seu formato anterior, fora concebida para a realidade dos bancos tradicionais, tornando-se progressivamente inadequada para abranger as operações realizadas por estes novos agentes do mercado. O problema era, portanto, a criação de um potencial ponto cego para a fiscalização, uma brecha que poderia ser explorada para práticas de evasão fiscal e lavagem de dinheiro, minando a capacidade do Estado de garantir a integridade do sistema tributário e financeiro nacional.
+
+\subsection{Metodologia}
+Para a elaboração deste relatório, adotou-se como metodologia o estudo de caso, centrado na trajetória da IN RFB nº 2.219/2024. A pesquisa empregou uma abordagem de métodos mistos, combinando técnicas qualitativas e quantitativas. Para a coleta de dados, foram empregadas técnicas de pesquisa documental e bibliográfica. A pesquisa documental centrou-se na análise de fontes primárias, como os textos oficiais das Instruções Normativas da Receita Federal e comunicados de imprensa de órgãos governamentais. A pesquisa bibliográfica envolveu o levantamento e a análise de fontes secundárias, incluindo reportagens e artigos de especialistas publicados em veículos da imprensa nacional, além de material audiovisual de grande repercussão que foi central para a controvérsia. A análise dos dados coletados foi realizada por meio da análise de conteúdo, com o objetivo de identificar os principais argumentos, as narrativas em disputa e a cronologia dos acontecimentos que culminaram na revogação da normativa.
+
+% =======================
+% 2 Análise da IN RFB 2.219/2024
+% =======================
+\section{Análise da IN RFB 2.219/2024}
+
+\subsection{Instruções Normativas (INs)}
+Instruções Normativas (INs) são atos administrativos de caráter normativo. Hierarquicamente, se encontram em um patamar inferior às leis (em sentido estrito), aos decretos e à própria Constituição Federal: elas não podem criar, modificar ou extinguir direitos e obrigações que não estejam previamente estabelecidos em lei. Assim, função primordial não é inovar no ordenamento jurídico, mas regulamentar e detalhar a aplicação de uma lei ou decreto, visando à sua fiel execução, sendo expedidas por autoridades administrativas, como o Secretário Especial da Receita Federal do Brasil. Em suma, traduzem os comandos, por vezes abstratos, da lei em rotinas e procedimentos operacionais claros, eficientes e eficazes.
+
+Apesar de sua função essencial para a operacionalização da máquina administrativa, as INs são frequentemente objeto de controvérsia jurídica. Quando uma IN, ao detalhar excessivamente uma obrigação, é percebida como se estivesse ampliando o alcance da lei, ela pode ser contestada judicialmente por vício de legalidade. Essa tensão inerente entre a necessidade de regulamentação e o risco de extrapolação dos limites da lei cria um campo de constante debate e insegurança jurídica.
+
+\subsection{A IN em questão}
+A criação do Pix pelo BCB em 2020 e a ascensão das fintechs e instituições de pagamento, todas reguladas pelo BCB, representaram uma evolução tecnológica que demandava uma atualização correspondente nos mecanismos de reporte de dados à RFB. A publicação da IN RFB nº 2.219/2024, que ocorreu no dia 18/09/2024 no Diário Oficial da União, portanto, como uma ponte regulatória necessária para garantir que o fluxo de dados para a fiscalização tributária acompanhasse as inovações promovidas pelo sistema financeiro. Ela não foi um ato isolado da RFB, mas a consequência da necessidade de manter a integridade de uma infraestrutura de vigilância financeira já existente e consolidada.
+
+O objetivo central e declarado da RFB era fortalecer o combate à sonegação fiscal e a crimes financeiros correlatos. A massificação do Pix como principal meio de transação no varejo e entre pessoas físicas criou um potencial ponto cego para o Fisco. Operações que antes deixavam um rastro claro em sistemas bancários tradicionais poderiam, em tese, ocorrer em grande volume através de novas plataformas com menor visibilidade para a autoridade tributária. A IN 2.219/2024 visava fechar essa brecha, garantindo que as movimentações relevantes em todas as plataformas fossem reportadas. A RFB pretendia desestimular a informalidade e a não declaração de rendas. O resultado esperado era influenciar o comportamento dos agentes econômicos, incentivando a regularização fiscal e, consequentemente, aumentando a arrecadação de forma indireta, não pela criação de novos tributos, mas pela redução da sonegação. A modernização da fiscalização, tornando-a mais automatizada e eficiente, era o resultado final previsto para o sistema tributário como um todo.
+
+Por outro lado, a principal justificativa técnica era a necessidade de modernizar e consolidar os instrumentos de coleta de informações financeiras. A norma revogou expressamente obrigações acessórias mais antigas e fragmentadas, como a Declaração de Operações com Cartões de Crédito (Decred), instituída em 2003. A Decred havia se tornado obsoleta, pois seu escopo era limitado aos cartões de crédito e não abrangia o vasto ecossistema de pagamentos digitais que emergiu nas últimas duas décadas, como cartões de débito, contas de pagamento e, principalmente, o Pix. A e-Financeira, uma plataforma mais moderna, foi então adaptada para absorver e ampliar essa coleta de dados. As alterações propostas mais significativas seriam:
+
+\begin{itemize}
+\item \textbf{Ampliação do Rol de Obrigados:} a mudança mais impactante foi a expansão da lista de entidades obrigadas a prestar informações. A regulamentação anterior focava em instituições financeiras tradicionais, enquanto a nova incluía explicitamente: instituições de pagamento autorizadas a gerenciar contas de pagamento (pré-pagas ou pós-pagas) e contas em moeda eletrônica, instituições que credenciam a aceitação de instrumentos de pagamento, participantes de arranjos de pagamento que habilitam o usuário final recebedor e administradoras de consórcios. Essa ampliação trouxe para o escopo da e-Financeira, de forma inequívoca, todo o ecossistema de fintechs, bancos digitais, operadoras de cartão e, consequentemente, as transações realizadas via Pix.
+
+\item \textbf{Atualização dos Limites de Reporte:} a norma também atualizou os valores mínimos mensais de movimentação que disparavam a obrigatoriedade de reporte à RFB. Contrariando a narrativa de que o controle seria maior, os limites foram, na verdade, elevados: para Pessoas Físicas, o limite de movimentação mensal subiu de R\$ 2.000 para R\$ 5.000, enquanto que para Pessoas Jurídicas, o limite mensal subiu de R\$ 6.000 para R\$ 15.000.
+\end{itemize}
+
+É crucial ressaltar que a norma mantinha a natureza da informação a ser prestada. As instituições deveriam informar apenas o montante global movimentado em cada tipo de operação (depósitos, saques, transferências, etc.) para cada CPF ou CNPJ que ultrapassasse os limites. A IN não exigia, e a lei não permite, o detalhamento da natureza, da origem ou do destino específico de cada transação. O sigilo bancário, protegido pela Lei Complementar nº 105/2001, era preservado, pois o Fisco receberia apenas o valor total movimentado, e não o extrato detalhado da conta do contribuinte.
+
+Consulte a tabela 1 para verificar o histórico da IN 2.219/2024:
+
+\begin{table}[h!]
+\centering
+\caption{Cronologia dos principais eventos relacionados à IN RFB nº 2.219/2024}
+\renewcommand{\arraystretch}{1.15}
+\begin{tabularx}{\textwidth}{>{\raggedright\arraybackslash}p{3cm} X}
+\hline
+\textbf{Data} & \textbf{Evento} \\
+\hline
+18/09/2024 & Publicação da IN RFB nº 2.219/2024 no Diário Oficial da União. \\
+01/01/2025 & Entrada em vigor das novas regras da IN, sem grande repercussão inicial. \\
+14/01/2025 & Deputado Nikolas Ferreira (PL) publica um vídeo crítico à medida, que viraliza massivamente, alcançando centenas de milhões de visualizações. \\
+15/01/2025 & Pressionado pela repercussão negativa, o Governo Federal anuncia a revogação da norma. A IN RFB nº 2.247/2025 é publicada em edição extra do Diário Oficial da União. \\
+16/01/2025 & Como medida adicional de contenção de danos, o Governo edita a Medida Provisória nº 1.288/2025 para reafirmar a gratuidade e a não tributação do Pix. \\
+\hline
+\end{tabularx}
+\end{table}
+
+\subsection{Impactos e a desinformação}
+Com a publicação da IN 2.219/2024, um cronograma claro para sua implementação foi estabelecido. A principal mudança, que envolvia os novos critérios e limites para o envio de informações pela e-Financeira, estava programada para entrar em vigor em 1º de janeiro de 2025. Nos meses entre a publicação e o fim do ano, o tema permaneceu restrito aos círculos técnicos: departamentos de conformidade de instituições financeiras, escritórios de advocacia tributária e contadores, que se preparavam para adequar seus sistemas às novas exigências. Para o público geral e para a maior parte da classe política, a norma era apenas mais uma dentre tantas atualizações burocráticas, sendo inclusive vista por especialistas como um passo lógico na modernização da fiscalização.
+
+A transição para o novo ano, contudo, que marcava a entrada em vigor da norma, foi o estopim para uma reviravolta abrupta e inesperada. Logo nos primeiros dias de janeiro de 2025, o que era um ajuste técnico e administrativo foi tomado por uma interpretação completamente diferente. A norma foi rebatizada e simplificada em um slogan alarmista e falso: a criação de um “imposto sobre o Pix” e um novo mecanismo de vigilância para taxar o cidadão comum. Foi nesse momento que a discussão deixou o campo técnico e se transformou em uma crise de desinformação com profundo impacto político e social.
+
+O ponto de inflexão da crise foi um vídeo publicado pelo Deputado Federal Nikolas Ferreira em 14 de janeiro de 2025. O impacto do vídeo foi avassalador: em poucos dias, acumulou centenas de milhões de visualizações, um número que supera a população de usuários de redes sociais no Brasil. Essa viralização massiva se traduziu em uma pressão política insustentável, de modo a superar em influência os pareceres técnicos da RFB.
+
+O principal impacto legal do vídeo não foi uma contestação judicial da norma, mas sua revogação pela via da força política. O vídeo funcionou como o catalisador que tornou o custo político de manter a IN 2.219/2024 proibitivamente alto, forçando o Poder Executivo a um recuo rápido e completo.
+
+\subsection{Revogação}
+A resposta das autoridades foi, inicialmente, insuficiente para conter a onda de desinformação. A RFB e a Secretaria de Comunicação da Presidência (SECOM) publicaram notas de esclarecimento e posts em canais oficiais, enfatizando que a norma não criava tributos, que o monitoramento de informações financeiras já existia e que os limites para reporte haviam, na verdade, sido aumentados, beneficiando quem movimenta valores menores.
+
+Mesmo assim, diante da magnitude da crise, a comunicação oficial não surtiu o efeito desejado. A decisão final foi a anulação. Em 15 de janeiro de 2025, o Secretário da RFB, Robinson Barreirinhas, anunciou publicamente a revogação da IN, através da IN RFB nº 2.247/2025, atribuindo a decisão diretamente à campanha de desinformação e aos “crimes contra a economia popular” que ela ensejou, afirmando que o recuo era necessário para “tirar essa arma da mão de criminosos inescrupulosos” e para não prejudicar o debate público. Este ato normativo foi curto e direto, com dois comandos principais:
+
+\begin{itemize}
+\item \textbf{Revogação:} O Art. 1º determinou a revogação expressa e integral da IN RFB nº 2.219/2024.
+\item \textbf{Repristinação:} O Art. 2º promoveu a repristinação de um conjunto de atos normativos que haviam sido revogados pela IN 2.219/2024.
+\end{itemize}
+
+A repristinação é um fenômeno do direito que ocorre quando uma norma revogadora é, ela mesma, revogada. A consequência é que a norma original, que estava sem efeito, volta a vigorar. Na prática, a IN 2.247/2025 funcionou como uma “máquina do tempo” regulatória, restaurando o status quo normativo que existia antes de 1º de janeiro de 2025. Com isso, as regras de reporte de informações financeiras por meio da e-Financeira voltaram a ser regidas pela IN 1.571/2015.
+
+% =======================
+% 3 Conclusão
+% =======================
+\section{Conclusão}
+A referida normativa representava uma tentativa legítima de modernizar os mecanismos de fiscalização, por meio da atualização dos limites de reporte e da inclusão de novas instituições financeiras no escopo regulatório. O insucesso da medida, no entanto, expôs uma vulnerabilidade ainda mais significativa: a carência de educação tributária e de letramento estatístico por parte da população. A crise foi alimentada por uma confusão conceitual entre obrigação acessória (prestação de informações à Receita Federal) e criação de novos tributos — interpretação equivocada que ganhou projeção no debate público.
+
+A desinformação foi intensificada pela divulgação de dados estatísticos factuais, porém descontextualizados — como a queda sazonal no uso do Pix —, que, em um ambiente carente de interpretação técnica, acabaram reforçando narrativas alarmistas e infundadas. Conclui-se, portanto, que o aprimoramento da administração tributária no Brasil exige uma abordagem integrada, que combine rigor técnico, clareza normativa e estratégias consistentes de comunicação pública. Além da formulação de políticas fiscalmente sólidas, torna-se imprescindível o investimento contínuo em educação financeira e digital, com vistas a fortalecer a compreensão social sobre obrigações legais e mitigar os efeitos da desinformação, que, quando não enfrentada, compromete o avanço da regulamentação em contextos cada vez mais complexos.
+
+% =======================
+% Referências
+% =======================
+\begin{thebibliography}{99}
+
+\bibitem{bcbpix}
+BANCO CENTRAL DO BRASIL. \textit{Arranjo Pix}. Brasília, DF, [s.d.]. Disponível em: \url{https://www.bcb.gov.br/estabilidadefinanceira/pix}. Acesso em: 3 jun. 2025.
+
+\bibitem{bcbfintechs}
+BANCO CENTRAL DO BRASIL. \textit{Fintechs}. Brasília, DF, [s.d.]. Disponível em: \url{https://cdn-www.bcb.gov.br/estabilidadefinanceira/fintechs}. Acesso em: 3 jun. 2025.
+
+\bibitem{bcbrelatorio}
+BANCO CENTRAL DO BRASIL. \textit{Fintechs de crédito e bancos digitais no Brasil: fatos estilizados}. In: Relatório de Economia Bancária. Brasília, DF, 2022. Disponível em: \url{https://www.bcb.gov.br/conteudo/relatorioinflacao/estudosespeciais/ee089_fintechs_de_credito_e_bancos_digitais.pdf}. Acesso em: 3 jun. 2025.
+
+\bibitem{bcbcriancas}
+BANCO CENTRAL DO BRASIL. \textit{O que é o Banco Central?} (Série Educativa para Crianças). Brasília, DF: Banco Central do Brasil, [s.d.]. Disponível em: \url{https://www.bcb.gov.br/content/cidadaniafinanceira/documentos_cidadania/Cadernos_BC-Serie_Educativa_para_criancas/bancocentral.pdf}. Acesso em: 3 jun. 2025.
+
+\bibitem{openfinance}
+BANCO CENTRAL DO BRASIL. \textit{Open Finance no Brasil}. Brasília, DF, [s.d.]. Disponível em: \url{https://www.bcb.gov.br/en/financialstability/open_finance}. Acesso em: 3 jun. 2025.
+
+\bibitem{pixfaq}
+BANCO CENTRAL DO BRASIL. \textit{PIX: Frequently Asked Questions}. Brasília, DF, [s.d.]. Disponível em: \url{https://www.bcb.gov.br/en/financialstability/pixfagen}. Acesso em: 3 jun. 2025.
+
+\bibitem{res4656}
+BANCO CENTRAL DO BRASIL. \textit{Resolução nº 4.656, de 26 de abril de 2018}. Dispõe sobre a sociedade de crédito direto (SCD) e a sociedade de empréstimo entre pessoas (SEP). Brasília, DF, 2018. Disponível em: \url{https://www.bcb.gov.br/pre/normativos/busca/downloadNormativo.asp?arquivo=/Lists/Normativos/Attachments/50534/Res_4656_v1_O.pdf}. Acesso em: 3 jun. 2025.
+
+\bibitem{rfbcompetencias}
+BRASIL. Ministério da Fazenda. Secretaria Especial da Receita Federal do Brasil. \textit{Competências}. Brasília, DF, [s.d.]. Disponível em: \url{https://www.gov.br/receitafederal/pt-br/acesso-a-informacao/institucional/competencias}. Acesso em: 3 jun. 2025.
+
+\bibitem{cnnpix}
+CNN BRASIL. \textit{Transações via Pix registram maior queda para janeiro em meio a onda de fake news}. São Paulo, 14 fev. 2025. Disponível em: \url{https://www.cnnbrasil.com.br/economia/macroeconomia/transacoes-via-pix-registram-maior-queda-para-janeiro-em-meio-a-onda-de-fake-news/}. Acesso em: 3 jun. 2025.
+
+\bibitem{consulcamp}
+CONSULCAMP. \textit{IN RFB n° 2219/2024: mudanças na prestação de informações financeiras}. Campinas, 13 jan. 2025. Disponível em: \url{https://consulcamp.com.br/2025/01/13/in-rfb-no-2219-2024-mudancas-na-prestacao-de-informacoes-financeiras/}. Acesso em: 3 jun. 2025.
+
+\bibitem{merten}
+MERTEN, Fabrício. \textit{MP 1288/25 e IN RFB 2247/25: e-Financeira e Decred - revogação das regras para fiscalização de transferências por PIX}. Porto Alegre, 17 jan. 2025. Disponível em: \url{https://merten.adv.br/2025/01/17/mp-1288-25-e-in-rfb-2247-25-e-financeira-e-decred-revogacao-das-regras-para-fiscalizacao-de-transferencias-por-pix-que-geraram-fake-news-sigilo-e-nao-incidencia-de-preco-superior-valor-ou-encargo/}. Acesso em: 3 jun. 2025.
+
+\bibitem{modeloinicial}
+MODELO INICIAL. \textit{Legislação Brasileira: Instruções Normativas}. [S.I.], [s.d.]. Disponível em: \url{https://modeloinicial.com.br/materia/legislacao-brasileira-instrucoes-normativas}. Acesso em: 3 jun. 2025.
+
+\bibitem{rfbesclarece}
+RECEITA FEDERAL. \textit{Receita Federal esclarece evolução na e-Financeira}. Brasília, DF, 10 jan. 2025. Disponível em: \url{https://www.gov.br/receitafederal/pt-br/assuntos/noticias/2025/janeiro/receita-federal-esclarece-evolucao-na-e-financeira}. Acesso em: 3 jun. 2025.
+
+\bibitem{sinesp}
+SINESP. \textit{Hierarquia das Leis no Brasil}. São Paulo, [s.d.]. Disponível em: \url{https://www.sinesp.org.br/images/2020/cursos-2021/anexo_Hierarquia_das_Leis_no_Brasil.pdf}. Acesso em: 3 jun. 2025.
+
+\bibitem{abres}
+ABES. \textit{Instrução Normativa RFB nº 2.219/2024, de 17 de setembro de 2024}. [S.l.: s.n.], 2024. Disponível em: \url{https://www.abrapp.org.br/legislacao/instrucao-normativa-rfb-no-2-219-de-17-de-setembro-de-2024/}. Acesso em: 3 jun. 2025.
+
+\end{thebibliography}
+
+\end{document}
