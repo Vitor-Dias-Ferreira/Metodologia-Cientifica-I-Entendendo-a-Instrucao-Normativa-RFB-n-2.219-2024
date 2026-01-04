@@ -1,0 +1,815 @@
+\documentclass{beamer}
+\usepackage[utf8]{inputenc}
+\usepackage[brazil]{babel}
+\usepackage[alf]{abntex2cite}
+\usepackage{hyperref}
+\usepackage{graphicx}
+\usepackage{booktabs} 
+\usepackage{ragged2e} 
+\usepackage{type1cm}
+\usepackage{eso-pic}
+\usepackage{color}
+\usepackage{tikz} 
+\usepackage{eso-pic} 
+\usetikzlibrary{calc}
+\usepackage{pgfplots}
+\usepgfplotslibrary{dateplot}
+\usetikzlibrary{positioning, shadows}
+\usepackage{ragged2e}
+\usepackage[T1]{fontenc}
+\usepackage{adjustbox}
+\usetikzlibrary{shapes, arrows, positioning}
+
+\definecolor{rfblue}{RGB}{0,74,153}
+\definecolor{rfgreen}{RGB}{0,109,44}
+\definecolor{rfred}{RGB}{200,16,46}
+\definecolor{lightgray}{RGB}{240,240,240}
+
+\setbeamercolor{palette primary}{bg=rfblue,fg=white}
+\setbeamercolor{palette secondary}{bg=rfblue,fg=white}
+\setbeamercolor{palette tertiary}{bg=rfblue,fg=white}
+\setbeamercolor{progress bar}{fg=rfred,bg=lightgray}
+\setbeamercolor{title separator}{fg=rfred}
+\setbeamercolor{block title}{bg=rfblue,fg=white}
+\setbeamercolor{block body}{bg=lightgray,fg=black}
+
+
+% Watermark command - ADD THIS TO YOUR PREAMBLE
+\newcommand{\watermark}{
+\begin{tikzpicture}[remember picture, overlay]
+\node[opacity=0.05] at ($(current page.east)$) 
+    {\includegraphics[width=8cm]{icmc_logo.png}}; % Adjust opacity/size here
+\end{tikzpicture}
+}
+
+\AddToShipoutPictureFG{\watermark}
+
+\definecolor{azulrf}{RGB}{0,74,153}
+\definecolor{verderf}{RGB}{0,109,44}
+\setbeamercolor{structure}{fg=azulrf}
+
+\usetheme{metropolis}
+\title{Entendendo a \\ Instrução Normativa RFB nº 2.219/2024}
+\author{
+    Alexander Kahleul \\
+    Fernando Ramos \\
+    Gabriel Maia \\
+    Vitor Dias
+}
+\institute{Universidade de São Paulo - USP \\
+Instituto de Ciências Matemáticas e de Computação - ICMC
+}
+
+\date{\today}
+
+\begin{document}
+
+\begin{frame}
+  \titlepage
+\end{frame}
+
+\begin{frame}
+    \section{Introdução}
+\end{frame}
+
+\begin{frame}{Introdução}
+      \begin{columns}[T]
+        \column{0.5\textwidth}
+        \centering
+        \textbf{Banco Central (BCB)}
+        \begin{itemize}
+            \item Regulamentação do sistema financeiro
+            \item Condução da política monetária
+            \item Controle da inflação
+            \item Operacionalização do Pix
+        \end{itemize}
+        
+        \column{0.5\textwidth}
+        \centering
+        \textbf{Receita Federal (RFB)}
+        \begin{itemize}
+            \item Fiscalização tributária
+            \item Combate à sonegação fiscal
+            \item Monitoramento via e-Financeira
+            \item Coleta de dados financeiros
+        \end{itemize}
+    \end{columns}
+    
+    \vspace{0.7cm}
+        \begin{block}{}
+            \begin{tikzpicture}[
+            node distance=4.5cm,
+            box/.style={draw, rounded corners, align=center, minimum width=3.2cm, minimum height=0.8cm, fill=white, font=\footnotesize},
+            arrow/.style={<->, >=stealth, thick, shorten >=2pt, shorten <=47pt}
+            ]
+                \node[box, fill=azulrf!20] (bcb) {Banco Central};
+                \node[box, fill=azulrf!30, right=of bcb] (rfb) {Receita Federal}; 
+                \draw[arrow] (bcb) ++ -- ++ (rfb)
+                node[above, midway, font=\footnotesize, xshift=0.6cm] {e-Financeira}
+                
+            \end{tikzpicture}
+        \end{block}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Introdução}
+    \begin{block}{e-Financeira}
+    \begin{itemize}
+        \item Plataforma eletrônica para recebimento de informações financeiras.
+        \item Monitoramento de operações suspeitas (fraudes, sonegação)
+        \item Fontes: Bancos, fintechs, instituições de pagamento, etc
+    \end{itemize}
+    \end{block}
+\end{frame}
+
+\begin{frame}{Introdução}
+    \begin{block}{\textit{Fintechs}}
+    \begin{itemize}
+        \item Empresas do setor financeiro que se utilizam de tecnologia para otimizar serviços e reduzir custos operacionais.
+        \item Regulamento específico.
+    \end{itemize}
+    \end{block}
+
+    \begin{block}{\textit{O Problema}}
+    \begin{itemize}
+        \item Como fiscalizar?
+    \end{itemize}
+    \end{block}
+\end{frame}
+
+\begin{frame}{Abordagem Metodológica}
+\fontsize{7}{11}
+    \begin{columns}[T]
+    \column{0.5\textwidth}
+    \begin{block}{Desenho da Pesquisa}
+    \begin{itemize}
+        \item \textbf{Natureza:} Estudo de caso
+        \item \textbf{Objeto:} Ciclo de vida da IN 2.219/2024
+        \item \textbf{Abordagem:} Qualitativa
+        \item \textbf{Período:} 2020-2025
+    \end{itemize}
+    \end{block}
+    
+    \begin{block}{Fontes Primárias}
+    \begin{itemize}
+        \item Texto da IN 2.219/2024
+        \item Comunicações oficiais (RFB, BCB)
+        \item Dados estatísticos do Pix
+        \item Relatórios regulatórios
+    \end{itemize}
+    \end{block}
+    
+    \column{0.5\textwidth}
+    \begin{block}{Fontes Secundárias}
+    \begin{itemize}
+        \item Reportagens jornalísticas
+        \item Artigos especializados
+        \item Materiais audiovisuais
+        \item Análises de impacto
+    \end{itemize}
+    \end{block}
+    
+    \begin{block}{Técnicas Analíticas}
+    \begin{itemize}
+        \item Análise documental
+        \item Análise de conteúdo
+        \item Análise estatística
+        \item Análise de discurso
+    \end{itemize}
+    \end{block}
+    \end{columns}
+\end{frame}
+
+\begin{frame}{Processo Analítico Compacto}
+    \centering
+    \scalebox{0.60}{ % Reduz o tamanho do diagrama
+    \begin{tikzpicture}[
+        node distance=0.5cm,
+        box/.style={draw, rounded corners, align=center, minimum width=3.2cm, minimum height=0.8cm, fill=white, font=\footnotesize},
+        arrow/.style={->, >=stealth, thick, shorten >=2pt, shorten <=2pt}
+    ]
+    
+    % Etapas principais em linha reta
+    \node[box, fill=azulrf!20] (coleta) {Coleta de dados};
+    \node[box, fill=azulrf!30, right=of coleta] (organiz) {Organização};
+    \node[box, fill=verde!20, right=of organiz] (analise) {Análise};
+    \node[box, fill=verde!30, right=of analise] (triang) {Triangulação};
+    \node[box, fill=vermelho!20, right=of triang] (valid) {Validação};
+    
+    % Conexões principais
+    \draw[arrow] (coleta) -- (organiz);
+    \draw[arrow] (organiz) -- (analise);
+    \draw[arrow] (analise) -- (triang);
+    \draw[arrow] (triang) -- (valid);
+    \draw[arrow] (valid) -- ++(0,-1.5) -| (coleta); % Ciclo de retorno
+    
+    % Detalhes abaixo das etapas
+    \node[below=0.1cm of coleta, text width=3.2cm, align=center, font=\tiny] 
+        {documentos e\\ reportagens};
+    \node[below=0.1cm of organiz, text width=3.2cm, align=center, font=\tiny] 
+        {Categorização temática \\ Codificação};
+    \node[below=0.1cm of analise, text width=3.2cm, align=center, font=\tiny] 
+        {Qualitativa + Quantitativa \\ Argumentos + Dados};
+    \node[below=0.1cm of triang, text width=3.2cm, align=center, font=\tiny] 
+        {Integração de métodos \\ Validação cruzada};
+    \node[below=0.1cm of valid, text width=3.2cm, align=center, font=\tiny] 
+        {Conclusões \\ Recomendações};
+    
+    % Legenda explicativa
+    \node[below=1.2cm of analise, text width=10cm, align=center, font=\small] (leg1) 
+        {\textcolor{azulrf}{Análise qualitativa: Argumentos, narrativas e cronologia}};
+    \node[below=0.1cm of leg1, text width=10cm, align=center, font=\small] (leg2) 
+        {\textcolor{verde}{Análise quantitativa: Dados do Pix e estatísticas regulatórias}};
+    \end{tikzpicture}
+    }
+    
+    % Explicação adicional
+    \begin{block}{Fluxo do Processo}
+        \begin{itemize}
+        \item \textcolor{azulrf}{\textbf{Linear:}} Sequência lógica de 5 etapas fundamentais
+        \item \textcolor{verde}{\textbf{Cíclico:}} Validação retroalimenta o processo de coleta
+        \item \textbf{Integrado:} Combinação permanente de abordagens qualitativa e quantitativa
+        \end{itemize}
+        \end{block}
+    \end{frame}
+    
+    % Diagrama de Triangulação corrigido
+    \begin{frame}{Triangulação de Dados}
+    \centering
+    \begin{tikzpicture}[
+        rot/.style={ellipse, draw, thick, minimum width=3cm, minimum height=1.8cm, align=center, font=\small}
+    ]
+    
+    % Posicionamento otimizado
+    \node[rot, fill=azulrf!20] (normativa) at (0,0) {Análise\\Normativa};
+    \node[rot, fill=verde!20] (dados) at (4,0) {Dados\\Quantitativos};
+    \node[rot, fill=vermelho!20] (discurso) at (0,-3) {Análise de\\Discurso};
+    \node[rot, fill=azulrf!30] (contexto) at (4,-3) {Contexto\\Regulatório};
+    
+    % Conexões otimizadas
+    \draw[->, thick] (normativa) -- node[midway, above, font=\scriptsize] {1} (dados);
+    \draw[->, thick] (dados) -- node[midway, right, font=\scriptsize] {2} (discurso);
+    \draw[->, thick] (discurso) -- node[midway, below, font=\scriptsize] {3} (contexto);
+    \draw[->, thick] (contexto) -- node[midway, left, font=\scriptsize] {4} (normativa);
+    \draw[->, thick] (normativa) to[out=240, in=120] node[midway, left, font=\scriptsize] {5} (discurso);
+    \draw[->, thick] (dados) to[out=300, in=60] node[midway, right, font=\scriptsize] {6} (contexto);
+    
+    % Legenda
+    \node[below=0.5cm of contexto, text width=8cm, align=center, font=\small] 
+        {\textbf{Integração metodológica para compreensão multidimensional do fenômeno}};
+    \end{tikzpicture}
+\end{frame}
+
+\begin{frame}
+    \section{Análise da IN RFB 2.219/2024}
+\end{frame}
+
+\begin{frame}{Instruções Normativas: Conceito e Características}
+\fontsize{8}{9}
+\scalebox{0.85}{
+\begin{columns}[T]
+\column{0.6\textwidth}
+\begin{block}{Definição e Natureza Jurídica}
+\begin{itemize}
+    \item \textbf{Ato administrativo} de caráter normativo
+    \item \textbf{Hierarquicamente inferior} a:
+    \begin{itemize}
+        \item Constituição Federal
+        \item Leis (complementares/ordinárias)
+        \item Decretos
+    \end{itemize}
+    \item \textbf{Não pode} criar, modificar ou extinguir direitos
+    \item Função: \textbf{regulamentar e detalhar} aplicação de leis
+\end{itemize}
+\end{block}
+
+\begin{block}{Função Primordial}
+\begin{itemize}
+    \item \textbf{Traduzir comandos abstratos} da lei
+    \item Estabelecer \textbf{rotinas e procedimentos operacionais}
+    \item Garantir \textbf{fiel execução} da legislação
+    \item Expedidas por \textbf{autoridades administrativas} (ex: Secretário da RFB)
+\end{itemize}
+\end{block}
+
+\column{0.4\textwidth}
+\centering
+\begin{tikzpicture}[
+    nivel/.style={draw, rounded corners, align=center, minimum width=3.5cm, minimum height=0.8cm, font=\footnotesize}
+]
+
+% Hierarquia normativa
+\node[nivel, fill=verde!30] (const) {1. Constituição Federal};
+\node[nivel, fill=azulrf!20, below=0.2cm of const] (leis) {2. Leis Complementares/Ordinárias};
+\node[nivel, fill=azulrf!30, below=0.2cm of leis] (decretos) {3. Decretos};
+\node[nivel, fill=vermelho!20, below=0.2cm of decretos] (ins) {4. Instruções Normativas};
+
+% Setas hierárquicas
+\draw[->, thick] (const) -- (leis);
+\draw[->, thick] (leis) -- (decretos);
+\draw[->, thick] (decretos) -- (ins);
+\end{tikzpicture}
+
+\vspace{0.5cm}
+\begin{alertblock}{Controvérsias Jurídicas}
+\fontsize{8}{7}
+\begin{itemize}
+    \item Risco de \textbf{extrapolar limites} da lei
+    \item Possibilidade de \textbf{contestação judicial}
+    \item Tensão entre \textbf{regulamentação × inovação}
+    \item Fonte de \textbf{insegurança jurídica}
+\end{itemize}
+\end{alertblock}
+\end{columns}}
+\end{frame}
+
+
+\begin{frame}
+    \frametitle{O que a IN 2.219 propunha?}
+    \begin{table}
+    \centering
+    \begin{tabular}{lcc}
+    \toprule
+    \textbf{Critério} & \textbf{Limite Anterior} & \textbf{Limite Novo} \\
+    \midrule
+    Pessoas Físicas (PF) & R\$ 2.000/mês & {\textbf{R\$ 5.000/mês}} \\
+    Pessoas Jurídicas (PJ) & R\$ 6.000/mês & {\textbf{R\$ 15.000/mês}} \\
+    \bottomrule
+    \end{tabular}
+    \end{table}
+    \vspace{0.5cm}
+    
+    \begin{alertblock}{Ampliação do Rol de Obrigados:}
+    \begin{itemize}
+        \item Instituições financeiras não tradicionais são obrigadas a prestar informações
+    \end{itemize}
+    \end{alertblock}
+\end{frame}
+
+%---- OBJETIVOS DA NORMA
+\begin{frame}
+    \frametitle{Objetivos da Norma}
+    \begin{columns}[T]
+        \column{0.5\textwidth}
+        \centering
+        \includegraphics[width=0.67\linewidth]{pix-logo.png} \\
+        \textbf{Adequação ao cenário digital}
+        \begin{itemize}
+            \item Volume maior de transações
+            \item Crescimento de fintechs
+            \item Popularização do Pix
+        \end{itemize}
+        
+        \column{0.5\textwidth}
+        \centering
+        \includegraphics[width=0.4\linewidth]{bcb-logo.png} \\
+        \textbf{Reforço do controle fiscal}
+        \begin{itemize}
+            \item Identificação de operações atípicas
+            \item Combate à sonegação
+            \item Otimização de cruzamento de dados
+        \end{itemize}
+    \end{columns}
+\end{frame}
+% --- POLEMICAS
+\begin{frame}
+    \frametitle{Impactos}
+    \begin{columns}[T]
+        \column{0.5\textwidth}
+        \begin{block}{Vantagens}
+        \begin{itemize}
+            \item \checkmark~Maior eficiência fiscal
+            \item \checkmark~Atualização de parâmetros
+            \item \checkmark~Combate a ilícitos financeiros
+        \end{itemize}
+        \end{block}
+        
+        \column{0.5\textwidth}
+        \begin{alertblock}{Preocupações}
+        \begin{itemize}
+            \item \textbf{Privacidade} de dados
+            \item \textbf{Sigilo bancário}
+            \item Comunicação pública
+            \item Desinformação
+        \end{itemize}
+        \end{alertblock}
+\end{columns}
+
+\vspace{0.6cm}
+\begin{exampleblock}{Posição oficial da RFB}
+    \vspace{0.2cm}
+    "A IN não cria tributos, apenas atualiza mecanismos de fiscalização existentes"
+\end{exampleblock}
+\end{frame}
+
+%-----------------------------------------
+\begin{frame}{Impactos e Desinformação: O Caso da IN RFB 2.219/2024}
+\centering
+\fontsize{8}{11}
+% Título da seção
+
+% Conteúdo principal em duas colunas
+\begin{columns}[T]
+
+% Coluna 1: O processo de desinformação
+\column{0.5\textwidth}
+\begin{block}{\textcolor{red}{A Propagação da Desinformação}}
+\begin{itemize}
+\item \textbf{Fase técnica (2024):} \\
+  Preparação silenciosa por especialistas
+\item \textbf{Virada (Jan/2025):} \\
+  Norma rebatizada como "imposto sobre o Pix"
+\item \textbf{Vídeo viral (14/Jan):} \\
+  Deputado Nikolas Ferreira - 100M+ visualizações
+\item \textbf{Narrativa simplista:} \\
+  "Governo quer taxar suas transferências"
+\end{itemize}
+\end{block}
+
+
+
+% Coluna 2: Impactos e consequências
+\column{0.5\textwidth}
+\begin{alertblock}{\textcolor{red}{Consequências Imediatas}}
+\begin{itemize}
+\item \textbf{Revogação da norma:} \\
+  IN RFB nº 2.247/2025 em 15/Jan
+\item \textbf{Precedente perigoso:} \\
+  Políticas técnicas derrotadas por desinformação
+\item \textbf{Perda oportunidade:} \\
+  Modernização fiscal adiada
+\item \textbf{Descrédito institucional:} \\
+  Autoridades técnicas desautorizadas
+\end{itemize}
+\end{alertblock}
+
+\end{columns}
+
+% Declaração de impacto
+
+
+\end{frame}
+%----------------------------------------
+\begin{frame}{Impactos e Desinformação: O Caso da IN RFB 2.219/2024}
+
+\begin{exampleblock}{Mecanismo da Crise}
+\begin{itemize}
+\item Informação técnica complexa \\
+  $\Downarrow$ \\
+  Simplificação distorcida \\
+  $\Downarrow$ \\
+  Viralização em redes sociais \\
+  $\Downarrow$ \\
+  Pressão política massiva
+\end{itemize}
+\end{exampleblock}
+
+\begin{exampleblock}{}
+\fontsize{8}{8}
+\centering
+\textbf{O vídeo funcionou como catalisador que tornou o custo político de manter a IN proibitivamente alto} \\
+
+\end{exampleblock}
+
+\end{frame}
+%----------------------------------------
+\begin{frame}{Cronologia dos principais eventos}
+        \begin{table}[ht]
+        
+      \centering
+      \caption{Cronologia dos principais eventos relacionados à IN RFB nº 2.219/2024}
+      \label{tab:cronologia-in-rfb}
+      \scalebox{0.7}{
+      \begin{tabular}{|p{3cm}|p{10cm}|}
+        \hline
+        \textbf{Data} & \textbf{Evento} \\ \hline
+        18/09/2024 & Publicação da IN RFB nº 2.219/2024 no Diário Oficial da União. \\ \hline
+        01/01/2025 & Entrada em vigor das novas regras da IN, sem grande repercussão inicial. \\ \hline
+        14/01/2025 & Deputado Nikolas Ferreira (PL) publica um vídeo crítico à medida, que viraliza massivamente, alcançando centenas de milhões de visualizações. \\ \hline
+        15/01/2025 & Pressionado pela repercussão negativa, o Governo Federal anuncia a revogação da norma. A IN RFB nº 2.247/2025 é publicada em edição extra do Diário Oficial da União. \\ \hline
+        16/01/2025 & Como medida adicional de contenção de danos, o Governo edita a Medida Provisória nº 1.288/2025 para reafirmar a gratuidade e a não tributação do Pix. \\ \hline
+      \end{tabular}}
+    \end{table}
+\end{frame}
+
+
+\begin{frame}{Crise, Resposta e Revogação da IN RFB 2.219/2024}
+    \centering
+    
+    
+    \box
+    \scalebox{0.9}{
+    % Linha do tempo simples
+    \vspace{0.5cm}
+    
+    \begin{columns}[T]
+    % Coluna 1: Desinformação
+    \column{0.25\textwidth}
+    \centering
+    \textcolor{orange}{\textbf{Onda de Desinformação}}
+    \begin{itemize}
+        \scriptsize
+        \item ``Novo imposto do Pix''
+        \item ``Fim do sigilo bancário''
+    \end{itemize}
+    \vspace{0.2cm}
+    \footnotesize 10/01/2025
+    
+    % Seta entre colunas
+    \column{0.05\textwidth}
+    \centering
+    \Huge $\rightarrow$
+    
+    % Coluna 2: Resposta Oficial
+    \column{0.25\textwidth}
+    \centering
+    \textcolor{orange}{\textbf{Resposta Oficial}}
+    \vspace{0.5cm}
+    \begin{itemize}
+        \scriptsize
+        \item Notas de esclarecimento
+        \item Posts em canais
+        \item \textbf{}{Não cria tributos}
+        \item \textbf{Limites aumentados}
+    \end{itemize}
+    \vspace{0.2cm}
+    \footnotesize 12/01/2025
+    
+    % Seta entre colunas
+    \column{0.05\textwidth}
+    \centering
+    \Huge $\rightarrow$
+    
+    % Coluna 3: Ineficácia
+    \column{0.25\textwidth}
+    \centering
+    \textcolor{orange}{\textbf{Ineficácia}}
+    \vspace{1.0cm}
+    \begin{itemize}
+        \scriptsize
+        \item Comunicação insuficiente
+        \item Não surtiu efeito
+    \end{itemize}
+    \vspace{0.2cm}
+    \footnotesize 14/01/2025
+    
+    % Seta entre colunas
+    \column{0.05\textwidth}
+    \centering
+    \Huge $\rightarrow$
+    
+    % Coluna 4: Revogação
+    \column{0.25\textwidth}
+    \centering
+    \textcolor{red}{\textbf{Revogação}}
+    \vspace{1.0cm}
+    \begin{itemize}
+        \scriptsize
+        \item 15/01/2025
+        \item IN RFB nº 2.247/2025
+    \end{itemize}
+    \vspace{0.2cm}
+    \footnotesize 15/01/2025
+    \end{columns}
+        }
+    
+\end{frame}
+
+\begin{frame}{Crise, Resposta e Revogação da IN RFB 2.219/2024}
+    \begin{figure}
+        \centering
+        \includegraphics[width=0.65\linewidth]{cnn_noticia.png}
+        \caption{Notícia CNN sobre o tema}
+        \label{fig:enter-label}
+    \end{figure}
+\end{frame}
+
+\begin{frame}{Dados do Pix: Evolução Histórica (2020-2023)}
+\fontsize{7}{8}
+\centering
+
+\includegraphics[width=0.7\textwidth]{transpix_2020.png}
+\begin{block}{Relevância para o estudo}
+\begin{itemize}
+    \item Crescimento exponencial das transações digitais
+    \item Diversificação de métodos de iniciação
+    \item Contexto para atualização dos limites de reporte
+\end{itemize}
+\end{block}
+
+\end{frame}
+
+\begin{frame}{Dados do Pix: Projeção (2023-2025)}
+\fontsize{7}{8}
+\centering
+\includegraphics[width=0.8\textwidth]{transaes-pix.png}
+
+\begin{block}{Implicações regulatórias}
+\begin{itemize}
+    \item Volume projetado justifica atualização dos limites
+    \item Necessidade de acompanhamento tecnológico
+    \item Desafios para identificação de operações atípicas
+\end{itemize}
+\end{block}
+\end{frame}
+
+
+
+% ---- CONCLUSÃO ----
+\begin{frame}
+    \section{Conclusão}
+\end{frame}
+
+\begin{frame}{Revisão}
+\begin{columns}[T]
+\column{0.5\textwidth}
+\begin{block}{Objetivos originais}
+\begin{itemize}
+    \item Atualizar limites de reporte financeiro
+    \item PF: de R\$ 2.000 para R\$ 5.000
+    \item PJ: de R\$ 6.000 para R\$ 15.000
+    \item Modernizar fiscalização tributária
+\end{itemize}
+\end{block}
+
+\column{0.5\textwidth}
+\begin{block}{Reação e resultado}
+\begin{itemize}
+    \item Forte reação social e política
+    \item Desinformação sobre criação de novos tributos
+    \item Normativa revogada em poucos dias
+    \item Retorno aos limites anteriores
+\end{itemize}
+\end{block}
+\end{columns}
+\end{frame}
+
+\begin{frame}{Principais Conclusões}
+\fontsize{9}{11}\selectfont
+\vspace{0.3cm}
+\begin{block}{1. Desafios da regulação digital}
+\begin{itemize}
+    \item Dificuldade em normatizar setores em rápida transformação
+    \item Velocidade tecnológica \texttimes{} lentidão regulatória
+    \item Necessidade de modelos mais adaptativos
+\end{itemize}
+\end{block}
+
+\begin{block}{2. Falhas de comunicação pública}
+\begin{itemize}
+    \item Confusão entre informação e tributação
+    \item Dados técnicos mal contextualizados
+    \item Ausência de estratégia de comunicação
+\end{itemize}
+\end{block}
+
+\begin{block}{3. Educação tributária insuficiente}
+\begin{itemize}
+    \item Carência de conhecimento sobre obrigações acessórias
+    \item Dificuldade em interpretar dados estatísticos
+    \item Vulnerabilidade a desinformação
+\end{itemize}
+\end{block}
+\end{frame}
+
+\begin{frame}{Análise do Caso}
+\begin{center}
+\begin{tikzpicture}[
+    node distance=1cm,
+    box/.style={draw, rounded corners, align=center, text width=3cm, minimum height=1.5cm}
+]
+
+\node[box, fill=azulrf!20] (intencao) {Intenção:\\ Modernização fiscal};
+\node[box, fill=azulrf!30, right=of intencao] (implement) {Implementação:\\ Novos limites};
+\node[box, fill=vermelho!20, below=of implement] (reacao) {Reação:\\ Desinformação};
+\node[box, fill=vermelho!30, left=of reacao] (resultado) {Resultado:\\ Revogação};
+
+\draw[->, thick] (intencao) -- (implement);
+\draw[->, thick] (implement) -- (reacao);
+\draw[->, thick] (reacao) -- (resultado);
+\draw[->, thick, dashed] (resultado) -- (intencao);
+
+\node[below=1.0cm of reacao, text width=8cm, align=] {\small\textcolor{red}{Falha no ciclo: Técnica desconectada da comunicação e educação}};
+\end{tikzpicture}
+\end{center}
+\end{frame}
+
+
+\begin{frame}{Recomendações}
+    \begin{enumerate}
+        \item \textbf{Reintroduzir a atualização} com melhor comunicação
+        \item Criar \textbf{câmara técnica permanente} RFB-BCB-Setor
+        \item Implementar \textbf{programa nacional de educação tributária}
+        \item Desenvolver \textbf{protocolos de transparência ativa}
+        \item Estabelecer \textbf{revisão automática} por indicadores econômicos
+    \end{enumerate}
+    
+    \vspace{0.5cm}
+    \begin{block}{Visão de futuro}
+    \vspace{0.09cm}
+    Sistema tributário digital que equilibre eficiência fiscal, inovação financeira e proteção do cidadão
+    \end{block}
+\end{frame}
+
+\begin{frame}{Conclusão Final}
+    \begin{center}
+    \Large
+    \textcolor{azulrf}{A modernização fiscal na era digital exige:}
+    
+    \vspace{0.5cm}
+    \begin{tabular}{c}
+    \hline
+    \textbf{Excelência técnica} \\
+    + \\
+    \textbf{Comunicação eficaz} \\
+    + \\
+    \textbf{Educação permanente} \\
+    \hline
+    \end{tabular}
+    
+    \vspace{0.5cm}
+    \textcolor{vermelho}{Falta de qualquer um = Risco de fracasso}
+    \end{center}
+\end{frame}
+
+
+% --- Bibliografia ---
+\begin{frame}{Bibliografia 1/3 - Instituições Governamentais}
+    \fontsize{7}{11}\selectfont
+    \bibliographystyle{abntex2-alf}
+    \begin{thebibliography}{}
+    
+        \bibitem[BRASIL, 2025a]{receita-competencias}
+        BRASIL. Receita Federal. \textbf{Competências}. Disponível em: \url{https://www.gov.br/receitafederal/pt-br/acesso-a-informacao/institucional/competencias}. Acesso em: 20 maio 2025.
+        
+        \bibitem[BRASIL, 2025b]{bcb-funcoes}
+        BRASIL. Banco Central do Brasil. \textbf{Banco Central: o que é e o que faz?}. Disponível em: \url{https://www.bcb.gov.br/content/cidadaniafinanceira/documentos_cidadania/Cadernos_BC-Serie_Educativa_para_criancas/bancocentral.pdf}. Acesso em: 20 maio 2025.
+        
+        \bibitem[BRASIL, 2025c]{resolucao4656}
+        BRASIL. Banco Central do Brasil. \textbf{Resolução nº 4.656, de [data]}. Disponível em: \url{https://www.bcb.gov.br/estabilidadefinanceira/exibenormativo?tipo=RESOLUÇÃO&numero=4656}. Acesso em: 20 maio 2025.
+        
+        \bibitem[BRASIL, 2025d]{fintechs}
+        BRASIL. Banco Central do Brasil. \textbf{Fintechs}. Disponível em: \url{https://cdn-www.bcb.gov.br/estabilidadefinanceira/fintechs}. Acesso em: 20 maio 2025.
+        
+        \bibitem[BRASIL, 2025e]{open-finance}
+        BRASIL. Banco Central do Brasil. \textbf{Open Finance}. Disponível em: \url{https://www.bcb.gov.br/en/financialstability/open_finance}. Acesso em: 20 maio 2025.
+    
+    \end{thebibliography}
+\end{frame}
+
+\begin{frame}{Bibliografia 2/3 - PIX e Fintechs}
+    \fontsize{7}{11}\selectfont
+    \bibliographystyle{abntex2-alf}
+    \begin{thebibliography}{}
+    
+    \bibitem[BRASIL, 2025f]{fintechs-credito}
+    BRASIL. Banco Central do Brasil. \textbf{Fintechs de crédito e bancos digitais}. Disponível em: \url{https://www.bcb.gov.br/conteudo/relatorioinflacao/estudosespeciais/ee089_fintechs_de_credito_e_bancos_digitais.pdf}. Acesso em: 20 maio 2025.
+    
+    \bibitem[BRASIL, 2025g]{pix}
+    BRASIL. Banco Central do Brasil. \textbf{PIX}. Disponível em: \url{https://www.bcb.gov.br/estabilidadefinanceira/pix}. Acesso em: 20 maio 2025.
+    
+    \bibitem[BRASIL, 2025h]{pix-faq}
+    BRASIL. Banco Central do Brasil. \textbf{PIX FAQ}. Disponível em: \url{https://www.bcb.gov.br/en/financialstability/pixfaqen}. Acesso em: 20 maio 2025.
+    
+    \bibitem[BRASIL, 2025i]{open-finance2}
+    BRASIL. Banco Central do Brasil. \textbf{Open Finance}. Disponível em: \url{https://www.bcb.gov.br/estabilidadefinanceira/openfinance}. Acesso em: 20 maio 2025.
+    
+    \bibitem[BRASIL, 2025j]{e-financeira}
+    BRASIL. Receita Federal. \textbf{Receita Federal esclarece evolução na e-Financeira}. Disponível em: \url{https://www.gov.br/receitafederal/pt-br/assuntos/noticias/2025/janeiro/receita-federal-esclarece-evolucao-na-e-financeira}. Acesso em: 20 maio 2025.
+    
+    \end{thebibliography}
+\end{frame}
+
+\begin{frame}{Bibliografia 3/3 - Legislação e Estudos}
+    \fontsize{5}{6}\selectfont
+    \bibliographystyle{abntex2-alf}
+    \begin{thebibliography}{}
+    
+    \bibitem[SINESP, 2025]{hierarquia-leis}
+    SINESP. \textbf{Hierarquia das Leis no Brasil}. Disponível em: \url{https://www.sinesp.org.br/images/2020/cursos-2021/anexo_Hierarquia_das_Leis_no_Brasil.pdf}. Acesso em: 20 maio 2025.
+    
+    \bibitem[MODELO INICIAL, 2025]{instrucoes-normativas}
+    MODELO INICIAL. \textbf{Legislação brasileira: instruções normativas}. Disponível em: \url{https://modeloinicial.com.br/materia/legislacao-brasileira-instrucoes-normativas}. Acesso em: 20 maio 2025.
+    
+    \bibitem[CONSULCAMP, 2025]{in-rfb-2219}
+    CONSULCAMP. \textbf{IN RFB nº 2.219/2024: mudanças na prestação de informações financeiras}. Disponível em: \url{https://consulcamp.com.br/2025/01/13/in-rfb-no-2219-2024-mudancas-na-prestacao-de-informacoes-financeiras/}. Acesso em: 20 maio 2025.
+    
+    \bibitem[BIS, 2025]{pix-banco-central}
+    BANCO DE PAGAMENTOS INTERNACIONAIS (BIS). \textbf{Estudo sobre o PIX e o Banco Central}. Disponível em: \url{https://static.poder360.com.br/2022/03/bis-banco-central-pix-estudo-23mar2022.pdf}. Acesso em: 20 maio 2025.
+    
+    \bibitem[EMERALD, 2025]{tecnologia-pix}
+    EMERALD INSIGHT. \textbf{Tecnologia e PIX}. Disponível em: \url{https://www.emerald.com/insight/content/doi/10.1108/inmr-10-2022-0133/full/html#sec002}. Acesso em: 20 maio 2025.
+    
+    \bibitem[BRASIL, 2025k]{estatisticas-pix}
+    BRASIL. Banco Central do Brasil. \textbf{Estatísticas PIX}. Disponível em: \url{https://www.bcb.gov.br/estabilidadefinanceira/estatisticaspix}. Acesso em: 20 maio 2025.
+    
+    \bibitem[BRASIL, 2025l]{relatorio-pix}
+    BRASIL. Banco Central do Brasil. \textbf{Relatório de Gestão PIX 2023}. Disponível em: \url{https://www.bcb.gov.br/content/estabilidadefinanceira/pix/relatorio_de_gestao_pix/relatorio_gestao_pix_2023.pdf}. Acesso em: 20 maio 2025.
+    
+    \bibitem[ABRAPP, 2025]{in-rfb-2219-original}
+    ABRAPP. \textbf{Instrução Normativa RFB nº 2.219, de 17 de setembro de 2024}. Disponível em: \url{https://www.abrapp.org.br/legislacao/instrucao-normativa-rfb-no-2-219-de-17-de-setembro-de-2024/}. Acesso em: 20 maio 2025.
+    
+    \end{thebibliography}
+\end{frame}
+
+\end{document}
